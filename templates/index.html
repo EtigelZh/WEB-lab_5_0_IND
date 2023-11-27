@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+ <title> Приветствие </title>
+ </head>
+<body>
+ <form action="{{ url_for('hello') }}" method="get">
+  <p>Выберите параметры:<br>
+
+ <input type = radio name=method value=SV> Сторона и высота <br>
+ <input type = radio name=method value=DD> Диагонали
+
+  </p>
+ <p>Сторона 1: <input type = number name=param1></p>
+ <p>Сторона 1: <input type = number name=param2></p>
+  <p>
+ Выберите дисциплины, которые Вы изучаете:<br>
+ {% for i in range(len(subject_list)) %}
+ <input type = checkbox name=subject[] value={{i}}>
+ {{subject_list[i]}}<br>
+ {% endfor %}
+ </p>
+ <p><input type=submit value=Отправить></p>
+ </form>
+</body>
+</html>

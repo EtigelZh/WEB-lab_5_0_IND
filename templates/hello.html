@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+ <title> Приветствие </title>
+ </head>
+<body>
+<p>
+ {% if method == "SV"%}
+ {% for sub in subjects_select %}
+ {% if sub == 'Периметр'%}
+ {{sub}} = {{name1 * 4}}
+ {%endif%}
+ {% if sub == 'Углы'%}
+ {{sub}}: <br>
+ угол1  = {{angle1}} угол2 = {{angle2}}
+ {%endif%}
+ {% if sub == 'Радиус'%}
+ {{sub}} = {{name1/2}}
+ {%endif%}
+ <br>
+ {% endfor %}
+ {%elif method == "DD"%}
+      {% for sub in subjects_select %}
+         {% if sub == 'Периметр'%}
+            {{sub}} = {{name1 * name2 * 0.5}}
+         {%endif%}
+         {% if sub == 'Углы'%}
+         {{sub}}: <br>
+         угол1  = {{angle1}} угол2 = {{angle2}}
+         {%endif%}
+         {% if sub == 'Радиус'%}
+         {{sub}} = {{name1/2}}
+         {%endif%}
+         <br>
+      {% endfor %}
+ {%endif%}
+ </p>
+</body>
